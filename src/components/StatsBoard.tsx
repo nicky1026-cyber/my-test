@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Users, Ban, Check, HelpCircle } from 'lucide-react';
+import { Users, Ban, Check, HelpCircle, Lock } from 'lucide-react';
 import { ArrangementStats } from '../types';
 
 interface StatsBoardProps {
@@ -13,7 +13,7 @@ interface StatsBoardProps {
 
 export default function StatsBoard({ stats }: StatsBoardProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
       {/* Student Count Card */}
       <div 
         id="stat-students"
@@ -23,9 +23,25 @@ export default function StatsBoard({ stats }: StatsBoardProps) {
           <Users className="w-6 h-6" />
         </div>
         <div>
-          <p className="text-xs font-medium text-slate-500">배정 학생 수</p>
+          <p className="text-xs font-medium text-slate-500">전체 학생 수</p>
           <p className="text-xl font-bold text-slate-800">
             {stats.studentCount}명
+          </p>
+        </div>
+      </div>
+
+      {/* Fixed Seats Card */}
+      <div 
+        id="stat-fixed"
+        className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center space-x-3 transition-all hover:shadow-md"
+      >
+        <div className="p-3 bg-amber-50 rounded-xl text-amber-600">
+          <Lock className="w-6 h-6" />
+        </div>
+        <div>
+          <p className="text-xs font-medium text-slate-500">지정 고정석</p>
+          <p className="text-xl font-bold text-slate-800">
+            {stats.fixedCount}석
           </p>
         </div>
       </div>
@@ -65,9 +81,9 @@ export default function StatsBoard({ stats }: StatsBoardProps) {
       {/* Auto Empty Seats Card */}
       <div 
         id="stat-empty"
-        className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center space-x-3 transition-all hover:shadow-md"
+        className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center space-x-3 transition-all hover:shadow-md col-span-2 md:col-span-1"
       >
-        <div className="p-3 bg-amber-50 rounded-xl text-amber-500">
+        <div className="p-3 bg-slate-50 rounded-xl text-slate-500">
           <HelpCircle className="w-6 h-6" />
         </div>
         <div>
