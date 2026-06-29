@@ -1,0 +1,6 @@
+{
+  "name": "자리 바꾸기 프로그램",
+  "description": "선생님과 학생들을 위한 깔끔하고 직관적인 교실 자리 바꾸기 프로그램입니다. 빈자리 지정 기능과 무작위 배정 기능을 제공합니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
